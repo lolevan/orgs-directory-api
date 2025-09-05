@@ -56,8 +56,15 @@ curl -H "X-API-Key: supersecretapikey" http://localhost:8000/api/v1/buildings/
 # Организации в здании
 curl -H "X-API-Key: supersecretapikey" http://localhost:8000/api/v1/organizations/by-building/1
 
-# Поиск по названию
-curl -H "X-API-Key: supersecretapikey" "http://localhost:8000/api/v1/organizations/search/by-name?q=Молоч"
+# Поиск по названию (Молоч)
+curl -H "X-API-Key: supersecretapikey" \
+  "http://localhost:8000/api/v1/organizations/search/by-name?q=%D0%9C%D0%BE%D0%BB%D0%BE%D1%87"
+
+# поиск по деятельности по имени (Еда)
+curl -H "X-API-Key: supersecretapikey" \
+  "http://localhost:8000/api/v1/search/by-activity-name?name=%D0%95%D0%B4%D0%B0"
+  
+# можно перейти в swager или redoc чтобы не писать в сырых байтах
 
 # По виду деятельности по имени (с потомками)
 curl -H "X-API-Key: supersecretapikey" "http://localhost:8000/api/v1/search/by-activity-name?name=Еда"
