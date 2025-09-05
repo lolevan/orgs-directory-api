@@ -1,0 +1,5 @@
+[tool.ruff]
+exclude = ["migrations", "venv"]
+
+[tool.ruff.per-file-ignores]
+"migrations/*" = ["E402"]
