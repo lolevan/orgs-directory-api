@@ -1,6 +1,6 @@
 # Organizations Directory API
 
-FastAPI сервис (слоистая архитектура: **models → repositories → services → API**), Alembic миграции, Docker, статический API‑ключ.
+FastAPI сервис, Alembic миграции, Docker, статический API‑ключ.
 
 ## Запуск (Docker)
 
