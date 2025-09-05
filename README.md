@@ -56,6 +56,14 @@ curl -H "X-API-Key: supersecretapikey" http://localhost:8000/api/v1/buildings/
 # Организации в здании
 curl -H "X-API-Key: supersecretapikey" http://localhost:8000/api/v1/organizations/by-building/1
 
+# Список организаций в конкретном здании
+curl -H "X-API-Key: supersecretapikey" \
+  http://localhost:8000/api/v1/organizations/by-building/1
+
+# Список организаций по виду деятельности (по ID)
+curl -H "X-API-Key: supersecretapikey" \
+  "http://localhost:8000/api/v1/organizations/by-activity/1?include_descendants=true"
+
 # Поиск по названию (Молоч)
 curl -H "X-API-Key: supersecretapikey" \
   "http://localhost:8000/api/v1/organizations/search/by-name?q=%D0%9C%D0%BE%D0%BB%D0%BE%D1%87"
@@ -68,6 +76,10 @@ curl -H "X-API-Key: supersecretapikey" \
 
 # По виду деятельности по имени (с потомками)
 curl -H "X-API-Key: supersecretapikey" "http://localhost:8000/api/v1/search/by-activity-name?name=Еда"
+
+# Точка: Москва, Красная площадь (55.7558, 37.6173), радиус 5 км
+curl -H "X-API-Key: supersecretapikey" \
+  "http://localhost:8000/api/v1/organizations/nearby?lat=55.7558&lon=37.6173&radius_km=5"
 ```
 
 ## Примечания по геопоиску
